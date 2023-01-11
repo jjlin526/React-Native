@@ -1,2 +1,2 @@
-# React-Native
-👋 ⚛️ Fundamentals of React Native.
+# ⚛️ Fundamentals of React Native
+
