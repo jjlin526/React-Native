@@ -19,3 +19,20 @@ In this example, we store the return value of setInterval, which is an interval 
 
 */
 
+import React, {useState, useEffect, useRef } from 'react'
+improt {View, Text, Button} from 'react-native'
+
+export default function App() {
+  const intervalRef = useRef()
+  const [count, setCount] = useState(0)
+  
+  useEffect(()=> {
+    intervalRef.current = setInterval(
+      () => setCount((count) => count + 1), 1000
+    )
+    
+    return () => {
+      clearInterval(intervalRef.current)
+    }
+},[])
+}
