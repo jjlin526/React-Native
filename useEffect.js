@@ -78,3 +78,29 @@ export default function App() {
     />
   )
 }
+
+/*
+
+Here the dependency array is empty, so our callback will only run once (and therefore only log one time).
+
+*/
+
+import React, { useState, useEffect } from 'react'
+import { Button } from 'react-native'
+
+export default function App() {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    console.log('Only once!')
+  }, [])
+
+  return (
+    <Button
+      title={`Increment ${count}`}
+      onPress={() => {
+        setCount(count + 1)
+      }}
+    />
+  )
+}
