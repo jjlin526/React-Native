@@ -29,5 +29,40 @@ function reducer(state, action) {
 }
 
 export default function App() {
+  const [state, dispatch] = useReducer(reducer, {first='', last=''})
   
+  return (
+    <View>
+      <TextInput
+          style={{ fontSize: 32}}
+          placeholder="First"
+          value={state.first}
+          onChangeText={(text) => {
+             dispatch(state, {type: 'first', value:text})
+          }}
+      />
+      
+      <TextInput
+          style={{fontSize: 32}}
+          placeholder="Last"
+          onChangeText={(text)=> {
+            dispatch(state, {type: "last",value: text})
+          }}
+      />
+      
+      <Text style={{fontSize: 32}}>
+        Hello {state.first} {state.last}
+      </Text>
+    </View>
+  )
 }
+
+/*
+
+Example:
+
+Store a first and last name in a single state object with useReducer.
+
+
+
+*/
