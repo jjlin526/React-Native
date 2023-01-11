@@ -8,4 +8,4 @@ Common built-in hooks:
 * **useEffect** - Perform side effects within our component functions
 * **useRef** - Wrap a mutable value
 
-* Recommended to use eslint and react-hooks plugin to catch mistakes before running code.
+Recommended to use eslint and react-hooks plugin to catch mistakes before running code.
