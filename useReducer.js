@@ -61,8 +61,8 @@ export default function App() {
 
 Example:
 
-Store a first and last name in a single state object with useReducer.
+In this example, we store both a first and last name in a single state object with useReducer.
 
-
+When we type a new first name, dispatch is called with { type: 'first', value: text } as its argument. This argument gets passed to the reducer as action. Then the reducer follows the switch case logic case 'first' and returns the new state: the current last name (from ...state) and the new first name contained in the action as action.value.
 
 */
