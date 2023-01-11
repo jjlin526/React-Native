@@ -39,3 +39,42 @@ export default function App() {
 In this example, we will log to the console any time the count is a multiple of 3. The callback is called every time the countEvery3 changes, since countEvery3 is listed as a dependency.
 
 */
+
+/*
+
+Undefined or empty dependency array
+
+If the dependency array is empty or undefined, useEffect will have a different behavior.
+
+- [] - the callback is called only once, right after the component renders for the first time
+- undefined - the callback is called on every component render (every time the component function runs)
+
+*/
+
+/*
+
+undefined dependencies
+
+Here the dependency array is undefined, so our callback will run every time our component function runs, e.g. any time we click the button and useState tells our component to re-run.
+
+*/
+
+import React, { useState, useEffect } from 'react'
+import { Button } from 'react-native'
+
+export default function App() {
+  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    console.log('Incremented!')
+  })
+
+  return (
+    <Button
+      title={`Increment ${count}`}
+      onPress={() => {
+        setCount(count + 1)
+      }}
+    />
+  )
+}
